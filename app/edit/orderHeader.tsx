@@ -25,9 +25,9 @@ const orderHeader = [
 
 export default function OrderHeader() {
   return (
-    <dl className="grid grid-cols-1 text-sm leading-6 sm:grid-cols-2">
+    <dl className="grid text-sm leading-6 grid-cols-1 md:grid-cols-2">
       {orderHeader.map((item, index) => {
-        let pl = index % 2 > 0 ? 'sm:pl-4' : 'sm:pr-4';
+        let pl = index % 2 > 0 ? 'md:pl-4' : 'md:pr-4';
         return (
           <div className={clsx('mt-2 sm:mt-0 pb-2', pl)} key={index}>
             <dt className="text-gray-500">{item.title}</dt>{' '}

@@ -289,11 +289,11 @@ export default function OrderItems() {
   return (
     <div className="overflow-x-scroll ">
       <table className="w-full text-sm leading-6 text-left whitespace-nowrap">
-        <thead className="text-gray-900 border-b border-gray-200">
-          <tr>
+        <thead className="text-gray-900">
+          <tr className="  bg-gray-300 rounded-t-2xl">
             <th
               scope="col"
-              className="sticky left-0 py-2 pl-2 pr-6 font-semibold bg-white"
+              className="sticky left-0 py-2 pl-2 pr-6 font-semibold bg-gray-300"
             >
               품명
             </th>

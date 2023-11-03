@@ -1,23 +1,27 @@
 'use client';
+import useSidebar from '@/store/ProductSidebar';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
 
 export default function DetailHeader1() {
+  const [setOpen] = useSidebar((state: any) => [state.setOpen]);
+
   return (
     <div className="mb-5">
       <div>
-        <nav className="sm:hidden" aria-label="Back">
-          <a
-            href="#"
+        <nav className="md:hidden flex justify-end" aria-label="Back">
+          <button
             className="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700"
+            onClick={setOpen}
           >
             <ChevronLeftIcon
               className="-ml-1 mr-1 h-5 w-5 flex-shrink-0 text-gray-400"
               aria-hidden="true"
             />
-            Back
-          </a>
+            History
+          </button>
         </nav>
-        <nav className="hidden sm:flex" aria-label="Breadcrumb">
+
+        <nav className="hidden md:flex" aria-label="Breadcrumb">
           <ol role="list" className="flex items-center space-x-4">
             <li>
               <div className="flex">
@@ -49,7 +53,7 @@ export default function DetailHeader1() {
         </nav>
       </div>
 
-      <div className="mt-2 md:flex md:items-center md:justify-between">
+      <div className="mt-2 flex items-center justify-between">
         <div className="min-w-0 flex items-baseline">
           <h2 className="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">
             수주정보
@@ -58,6 +62,7 @@ export default function DetailHeader1() {
             CO20231023001
           </p>
         </div>
+
         <div className="mt-4 flex flex-shrink-0 md:ml-4 md:mt-0">
           <button
             type="button"
