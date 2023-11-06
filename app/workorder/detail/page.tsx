@@ -81,7 +81,7 @@ export default function WorkOrderDetail() {
                         className={({ active }) =>
                           clsx(
                             active ? 'ring-2 ring-indigo-500' : '',
-                            'relative block cursor-pointer rounded-lg border border-gray-300 p-4 focus:outline-none text-center -z-10'
+                            'relative block cursor-pointer rounded-lg border border-gray-300 p-4 focus:outline-none text-center'
                           )
                         }
                       >
@@ -105,7 +105,7 @@ export default function WorkOrderDetail() {
                                 checked
                                   ? 'border-indigo-500'
                                   : 'border-transparent',
-                                'pointer-events-none absolute -inset-px rounded-lg -z-10'
+                                'pointer-events-none absolute -inset-px rounded-lg'
                               )}
                               aria-hidden="true"
                             />
