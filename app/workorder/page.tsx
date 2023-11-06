@@ -123,11 +123,8 @@ export default function WorkOrder() {
         className="divide-y divide-gray-300 overflow-hidden bg-white shadow-sm ring-1 ring-gray-300 sm:rounded-xl mt-5"
       >
         {people.map(person => (
-          <Link href="workorder/detail">
-            <li
-              key={person.email}
-              className="relative flex justify-between hover:bg-gray-50"
-            >
+          <Link href="workorder/detail" key={person.email}>
+            <li className="relative flex justify-between hover:bg-gray-50">
               <Image src={person.imageUrl} height="50" width="100" alt="" />
 
               <div
