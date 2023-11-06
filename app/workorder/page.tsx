@@ -2,6 +2,7 @@
 import { ChevronRightIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const people = [
   {
@@ -84,7 +85,7 @@ const people = [
 
 export default function WorkOrder() {
   return (
-    <div className="pt-3 mx-auto max-w-3xl w-full">
+    <div className="pt-3 mx-auto max-w-4xl w-full">
       <div className="ring-1 ring-gray-300 rounded-lg p-3 grid grid-cols-2 sm:grid-cols-4 gap-3 items-end">
         <select
           id="fixedAsset"
@@ -122,65 +123,69 @@ export default function WorkOrder() {
         className="divide-y divide-gray-300 overflow-hidden bg-white shadow-sm ring-1 ring-gray-300 sm:rounded-xl mt-5"
       >
         {people.map(person => (
-          <li
-            key={person.email}
-            className="relative flex justify-between hover:bg-gray-50"
-          >
-            <Image src={person.imageUrl} height="50" width="100" alt="" />
-
-            <div
-              className={clsx(
-                'flex w-full mr-4 pl-4 justify-between border-l-8',
-                person?.status === 'RUNNING' && 'border-emerald-500',
-                person?.status === 'COMPLETED' && 'border-blue-500',
-                person?.status === 'HOLD' && 'border-yellow-500'
-              )}
+          <Link href="workorder/detail">
+            <li
+              key={person.email}
+              className="relative flex justify-between hover:bg-gray-50"
             >
-              <div className="flex flex-col justify-center">
-                <p className="text-lg font-semibold leading-6 text-gray-900">
-                  {person.name}
-                </p>
-                <p className="mt-1 text-xs leading-5 text-gray-500">
-                  {person.email}
-                </p>
-                <p className="mt-1 text-xs leading-5 text-gray-500">
-                  <span>{person.spec}</span>
-                  <span className="text-gray-600 font-semibold mx-2">|</span>
-                  <span>{person.pattern}</span>
-                </p>
-              </div>
+              <Image src={person.imageUrl} height="50" width="100" alt="" />
 
-              <div className="flex shrink-0 items-center gap-x-4">
-                <div className="hidden sm:flex sm:flex-col sm:items-end">
-                  <p className=" text-gray-900 mb-1">
-                    <span className="text-2xl leading-6">{person.role}</span>
-                    {' / '}
-                    <span className="text-xl text-gray-400">{person.role}</span>
+              <div
+                className={clsx(
+                  'flex w-full mr-4 pl-4 justify-between border-l-8',
+                  person?.status === 'RUNNING' && 'border-emerald-500',
+                  person?.status === 'COMPLETED' && 'border-blue-500',
+                  person?.status === 'HOLD' && 'border-yellow-500'
+                )}
+              >
+                <div className="flex flex-col justify-center">
+                  <p className="text-lg font-semibold leading-6 text-gray-900">
+                    {person.name}
                   </p>
-
-                  <p
-                    className={clsx(
-                      person?.status === 'COMPLETED' &&
-                        'text-blue-700 bg-blue-50 ring-blue-600/20',
-                      person?.status === 'RUNNING' &&
-                        'text-green-700 bg-green-50 ring-green-600/20',
-                      person?.status === 'SCHEDULED' &&
-                        'text-gray-600 bg-gray-50 ring-gray-500/10',
-                      person?.status === 'HOLD' &&
-                        'text-yellow-800 bg-yellow-50 ring-yellow-600/20',
-                      'rounded-md whitespace-nowrap mt-0.5 px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset'
-                    )}
-                  >
-                    {person.status}
+                  <p className="mt-1 text-xs leading-5 text-gray-500">
+                    {person.email}
+                  </p>
+                  <p className="mt-1 text-xs leading-5 text-gray-500">
+                    <span>{person.spec}</span>
+                    <span className="text-gray-600 font-semibold mx-2">|</span>
+                    <span>{person.pattern}</span>
                   </p>
                 </div>
-                <ChevronRightIcon
-                  className="h-5 w-5 flex-none text-gray-400"
-                  aria-hidden="true"
-                />
+
+                <div className="flex shrink-0 items-center gap-x-4">
+                  <div className="hidden sm:flex sm:flex-col sm:items-end">
+                    <p className=" text-gray-900 mb-1">
+                      <span className="text-2xl leading-6">{person.role}</span>
+                      {' / '}
+                      <span className="text-xl text-gray-400">
+                        {person.role}
+                      </span>
+                    </p>
+
+                    <p
+                      className={clsx(
+                        person?.status === 'COMPLETED' &&
+                          'text-blue-700 bg-blue-50 ring-blue-600/20',
+                        person?.status === 'RUNNING' &&
+                          'text-green-700 bg-green-50 ring-green-600/20',
+                        person?.status === 'SCHEDULED' &&
+                          'text-gray-600 bg-gray-50 ring-gray-500/10',
+                        person?.status === 'HOLD' &&
+                          'text-yellow-800 bg-yellow-50 ring-yellow-600/20',
+                        'rounded-md whitespace-nowrap mt-0.5 px-1.5 py-0.5 text-xs font-medium ring-1 ring-inset'
+                      )}
+                    >
+                      {person.status}
+                    </p>
+                  </div>
+                  <ChevronRightIcon
+                    className="h-5 w-5 flex-none text-gray-400"
+                    aria-hidden="true"
+                  />
+                </div>
               </div>
-            </div>
-          </li>
+            </li>
+          </Link>
         ))}
       </ul>
 
