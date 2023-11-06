@@ -9,6 +9,7 @@ const navigation = [
   { name: '검색', href: '/find', current: false },
   { name: '검색1', href: '/find1', current: false },
   { name: '상세화면', href: '/edit', current: false },
+  { name: '작업지시서', href: '/workorder', current: false },
 ];
 
 export default function Header() {

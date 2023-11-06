@@ -374,13 +374,13 @@ export default function OrderItems() {
               <td className="px-2 py-3 align-top">{item.colorName}</td>
 
               <td className="hidden px-2 py-3 text-right align-top tabular-nums sm:table-cell">
-                ${item.unitPrice}
+                ${item.unitPrice.toFixed(2)}
               </td>
               <td className="hidden px-2 py-3 text-right align-top tabular-nums sm:table-cell">
                 {item.quantity}
               </td>
               <td className="px-2 py-3 text-right align-top tabular-nums">
-                ${item.quantity * item.unitPrice}
+                ${(item.quantity * item.unitPrice).toFixed(2)}
               </td>
             </tr>
           ))}
