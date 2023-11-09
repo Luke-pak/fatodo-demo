@@ -20,8 +20,8 @@ export default function Tabs() {
               className={({ selected }) =>
                 clsx(
                   selected
-                    ? 'border-indigo-500 text-indigo-600'
-                    : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700',
+                    ? 'border-indigo-500 text-indigo-600 dark:text-indigo-500'
+                    : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-gray-300',
                   'whitespace-nowrap border-b-2 py-3 px-5 text-sm font-semibold'
                 )
               }

@@ -4,6 +4,8 @@ import clsx from 'clsx';
 
 const inputClasses =
   'block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6';
+const inputDark =
+  'dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500';
 
 const orderHeader = [
   { name: 'orderId', title: '수주번호', value: 'CO2310170002' },
@@ -30,12 +32,14 @@ export default function OrderHeader() {
         let pl = index % 2 > 0 ? 'md:pl-4' : 'md:pr-4';
         return (
           <div className={clsx('mt-2 sm:mt-0 pb-2', pl)} key={index}>
-            <dt className="text-gray-500">{item.title}</dt>{' '}
+            <dt className="text-gray-500 mb-1 font-medium dark:text-gray-300">
+              {item.title}
+            </dt>{' '}
             <dd className="text-gray-900">
               <input
                 type="text"
                 name={item.name}
-                className={inputClasses}
+                className={clsx(inputClasses, inputDark)}
                 defaultValue={item.value}
               />
             </dd>

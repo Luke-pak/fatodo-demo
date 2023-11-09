@@ -46,14 +46,24 @@ export function Search2() {
       <div className="col-span-12 grid grid-cols-12 p-3 border border-gray-200 rounded-md">
         <div className="col-span-12 sm:col-span-8 py-1 min-h-[3rem] px-3">
           <button
-            className="border border-slate-400 rounded-lg text-slate-400 flex justify-between h-9 items-center w-full sm:w-1/2 px-3"
+            className="border border-slate-400 rounded-lg text-slate-400 flex justify-between h-9 items-center w-full sm:w-3/4 px-3"
             onClick={() => setOpen(true)}
           >
             <div className="flex items-center text-black">
               <MagnifyingGlassIcon className="h-5 w-5" />
               <span className="border-r-2 px-2">검색</span>
             </div>
-
+            <div className="text-xs flex gap-1">
+              <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
+                2023-11-07~2023-11-14
+              </span>
+              <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
+                품명
+              </span>
+              <span className="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">
+                품번
+              </span>
+            </div>
             <div className="text-sm">옵션</div>
           </button>
         </div>
@@ -102,19 +112,19 @@ export function Search2() {
                         <span>검색옵션</span>
                       </Dialog.Title>
 
-                      <div className="mt-2 w-[90vw] sm:w-[60vw]">
-                        <div className="my-5">
+                      <div className="mt-2 w-[90vw] sm:w-[60vw] grid grid-cols-12 gap-3">
+                        <div className="mt-1 col-span-4">
                           <Text name="internalName" title="품번" />
                         </div>
-                        <div className="my-5">
+                        <div className="mt-1 col-span-4">
                           <Text name="productName" title="품명" />
                         </div>
 
-                        <div className="my-5">
+                        <div className="mt-1 col-span-12">
                           <label className="block mb-2 text-sm font-semibold text-gray-900">
                             기간 설정
                           </label>
-                          <div className="grid grid-cols-6">
+                          {/* <div className="grid grid-cols-6">
                             {dateTerms.map(item => (
                               <div key={item.key} className="flex items-center">
                                 <input
@@ -132,6 +142,29 @@ export function Search2() {
                                 </label>
                               </div>
                             ))}
+                          </div> */}
+
+                          <div className="grid grid-cols-10 gap-3">
+                            {dateTerms.map(item => (
+                              <button
+                                key={item.key}
+                                className="ring-2 ring-indigo-400 px-2 py-1 rounded-md text-gray-600 hover:ring-transparent hover:bg-indigo-600 hover:text-white text-sm"
+                              >
+                                {item.title}
+                              </button>
+                            ))}
+                          </div>
+
+                          <div className="grid grid-cols-10 gap-2 mt-2">
+                            <input
+                              className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 col-span-2 text-center"
+                              type="date"
+                            />
+                            <span className="text-center text-2xl"> ~ </span>
+                            <input
+                              className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 col-span-2 text-center"
+                              type="date"
+                            />
                           </div>
                         </div>
                       </div>

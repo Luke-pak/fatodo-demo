@@ -287,13 +287,13 @@ export default function OrderItems() {
   };
 
   return (
-    <div className="overflow-x-scroll ">
+    <div className="overflow-x-scroll border border-gray-200 rounded-t-md">
       <table className="w-full text-sm leading-6 text-left whitespace-nowrap">
-        <thead className="text-gray-900">
-          <tr className="  bg-gray-300 rounded-t-2xl">
+        <thead className="text-gray-900 bg-opacity-75 bg-gray-200 dark:bg-gray-700 dark:text-gray-300">
+          <tr>
             <th
               scope="col"
-              className="sticky left-0 py-2 pl-2 pr-6 font-semibold bg-gray-300"
+              className="sticky left-0 py-2 pl-3 pr-6 font-semibold text-gray-900 bg-opacity-75 bg-gray-200 dark:bg-gray-700 dark:text-gray-300"
             >
               품명
             </th>
@@ -342,10 +342,10 @@ export default function OrderItems() {
             </th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
           {invoice.items.map(item => (
             <tr key={item.orderItemSeqId} className="border-b border-gray-100">
-              <td className="sticky left-0 pl-2 align-top bg-white">
+              <td className="sticky left-0 pl-2 align-top bg-white dark:bg-gray-800 dark:border-gray-700">
                 <div className="flex py-2 pr-3 border-r border-gray-200">
                   <div className="w-16 p-1">
                     <Image
@@ -357,7 +357,7 @@ export default function OrderItems() {
                     />
                   </div>
                   <div>
-                    <div className="font-medium text-gray-900 truncate ">
+                    <div className="font-medium text-gray-900 dark:text-gray-400 truncate ">
                       {item.productName}
                     </div>
                     <div className="text-gray-500 truncate">

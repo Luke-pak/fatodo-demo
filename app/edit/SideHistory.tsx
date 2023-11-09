@@ -3,51 +3,7 @@
 import useSidebar from '@/store/ProductSidebar';
 import { Dialog, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
-import {
-  LinkIcon,
-  PlusIcon,
-  QuestionMarkCircleIcon,
-} from '@heroicons/react/20/solid';
-import Image from 'next/image';
 import { Activity, Comment } from './comment';
-
-const team = [
-  {
-    name: 'Tom Cook',
-    email: 'tom.cook@example.com',
-    href: '#',
-    imageUrl:
-      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  },
-  {
-    name: 'Whitney Francis',
-    email: 'whitney.francis@example.com',
-    href: '#',
-    imageUrl:
-      'https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  },
-  {
-    name: 'Leonard Krasner',
-    email: 'leonard.krasner@example.com',
-    href: '#',
-    imageUrl:
-      'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  },
-  {
-    name: 'Floyd Miles',
-    email: 'floyd.miles@example.com',
-    href: '#',
-    imageUrl:
-      'https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  },
-  {
-    name: 'Emily Selman',
-    email: 'emily.selman@example.com',
-    href: '#',
-    imageUrl:
-      'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  },
-];
 
 export default function SideHitory() {
   const [open, setClose] = useSidebar((state: any) => [
@@ -81,13 +37,13 @@ export default function SideHitory() {
                 leaveTo="translate-x-full"
               >
                 <Dialog.Panel className="w-screen h-full max-w-2xl pointer-events-auto">
-                  <form className="flex flex-col h-full overflow-y-scroll bg-white shadow-xl">
+                  <form className="flex flex-col h-full overflow-y-scroll bg-white shadow-xl dark:bg-gray-900">
                     <div className="flex-1">
                       {/* Header */}
-                      <div className="absolute top-0 w-full p-4 bg-gray-100 sm:px-6 pr-14">
+                      <div className="absolute top-0 w-full p-4 bg-gray-100 sm:px-6 pr-14 dark:bg-gray-700 z-10">
                         <div className="flex items-start justify-between space-x-3">
                           <div className="space-y-1">
-                            <Dialog.Title className="text-base font-semibold leading-6 text-gray-900">
+                            <Dialog.Title className="text-base font-semibold leading-6 text-gray-900 dark:text-white">
                               History
                             </Dialog.Title>
                           </div>
@@ -109,18 +65,18 @@ export default function SideHitory() {
                       </div>
 
                       {/* Divider container */}
-                      <div className="py-3 mt-16 mb-20 pr-12 pl-6">
+                      <div className="py-3 mt-16 mb-32 sm:mb-20 pr-12 pl-6">
                         <Comment />
                         <Activity />
                       </div>
                     </div>
 
                     {/* Action buttons */}
-                    <div className="absolute w-full px-4 pt-2 pb-4 bg-white border-t border-gray-200 bottom-16 sm:px-6 pr-14">
+                    <div className="absolute w-full px-4 pt-2 pb-4 bg-white border-t border-gray-200 bottom-16 sm:px-6 pr-14 dark:bg-gray-700 dark:border-0">
                       <div className="flex justify-end space-x-3">
                         <button
                           type="button"
-                          className="px-3 py-2 text-sm font-semibold text-gray-900 bg-white rounded-md shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                          className="px-3 py-2 text-sm font-semibold text-gray-900 bg-white rounded-md shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:bg-gray-600 dark:ring-gray-600 dark:text-white dark:hover:bg-gray-500"
                           onClick={setClose}
                         >
                           취소

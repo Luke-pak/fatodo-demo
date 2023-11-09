@@ -55,7 +55,7 @@ export default function DetailHeader1() {
 
       <div className="mt-2 flex items-center justify-between">
         <div className="min-w-0 flex items-baseline">
-          <h2 className="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">
+          <h2 className="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight dark:text-white">
             수주정보
           </h2>
           <p className="ml-5 mt-1 truncate text-sm text-gray-500">
@@ -66,7 +66,7 @@ export default function DetailHeader1() {
         <div className="mt-0 flex flex-shrink-0 md:ml-4">
           <button
             type="button"
-            className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+            className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:bg-gray-600 dark:ring-gray-600 dark:text-white dark:hover:bg-gray-500"
           >
             수정
           </button>

@@ -1,13 +1,15 @@
 'use client';
 
-import { Disclosure } from '@headlessui/react';
+import { Disclosure, Switch } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { SunIcon, MoonIcon } from '@heroicons/react/24/solid';
 import clsx from 'clsx';
 import Link from 'next/link';
+import ProfileMenu from './ProfileMenu';
+import DropMenu from './DropMenu';
+import { useEffect, useState } from 'react';
 
 const navigation = [
-  { name: '검색', href: '/find', current: false },
-  { name: '검색1', href: '/find1', current: false },
   { name: '상세화면', href: '/edit', current: false },
   { name: '작업지시서', href: '/workorder', current: false },
 ];
@@ -41,7 +43,8 @@ export default function Header() {
                   />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex space-x-4">
+                  <div className="flex space-x-2">
+                    <DropMenu />
                     {navigation.map(item => (
                       <Link
                         key={item.name}
@@ -70,6 +73,8 @@ export default function Header() {
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="w-6 h-6" aria-hidden="true" />
                 </button>
+                {/* =====👈👈👈👈👈 Profile Menu 👉👉👉👉👉 ===== */}
+                <ProfileMenu />
               </div>
             </div>
           </div>
@@ -77,6 +82,7 @@ export default function Header() {
           {/* =====👈👈👈👈👈 Mobile Menu 👉👉👉👉👉 ===== */}
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
+              <DropMenu />
               {navigation.map(item => (
                 <Link
                   key={item.name}

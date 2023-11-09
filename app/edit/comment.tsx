@@ -64,13 +64,15 @@ export function Comment() {
 
   return (
     <>
-      <h2 className="text-sm font-semibold text-gray-900">댓글</h2>
+      <h2 className="text-sm font-semibold text-gray-900 dark:text-gray-200">
+        댓글
+      </h2>
 
       <div className="flex mt-1 gap-x-3">
         <img
           src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
           alt=""
-          className="flex-none w-6 h-6 rounded-full bg-gray-50"
+          className="flex-none w-6 h-6 rounded-full bg-gray-50 dark:border-white dark:border-2"
         />
         <form action="#" className="relative flex-auto">
           <div className="pb-12 px-2 overflow-hidden rounded-lg shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-indigo-600">
@@ -82,7 +84,7 @@ export function Comment() {
               name="comment"
               id="comment"
               className="block w-full resize-none border-0 bg-transparent py-1.5 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-              placeholder="Add your comment..."
+              placeholder="내용을 입력해주세요"
               defaultValue={''}
             />
           </div>
@@ -184,7 +186,7 @@ export function Comment() {
             </div>
             <button
               type="submit"
-              className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+              className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:bg-gray-600 dark:ring-gray-600 dark:text-white dark:hover:bg-gray-500"
             >
               등록
             </button>
@@ -252,7 +254,7 @@ const activity = [
 export function Activity() {
   return (
     <>
-      <h2 className="text-sm font-semibold leading-6 text-gray-900 mt-6">
+      <h2 className="text-sm font-semibold leading-6 text-gray-900 mt-6 dark:text-gray-200">
         History
       </h2>
       <ul
@@ -274,12 +276,13 @@ export function Activity() {
                 <img
                   src={activityItem.person.imageUrl}
                   alt=""
-                  className="relative flex-none w-6 h-6 mt-3 rounded-full bg-gray-50"
+                  className="relative flex-none w-6 h-6 mt-3 rounded-full bg-gray-50 dark:border-white dark:border-2"
                 />
+
                 <div className="flex-auto px-3 py-1 rounded-md ring-1 ring-inset ring-gray-200">
                   <div className="flex justify-between gap-x-4">
                     <div className="py-0.5 text-xs leading-5 text-gray-500">
-                      <span className="font-medium text-gray-900">
+                      <span className="font-medium text-gray-900 dark:text-gray-300">
                         {activityItem.person.name}
                       </span>
                     </div>
@@ -290,25 +293,27 @@ export function Activity() {
                       {activityItem.date}
                     </time>
                   </div>
-                  <p className="text-sm leading-6 text-gray-500">
+                  <p className="text-sm leading-6 text-gray-500 dark:text-white">
                     {activityItem.comment}
                   </p>
                 </div>
               </>
             ) : (
               <>
-                <div className="relative flex items-center justify-center flex-none w-6 h-6 bg-white">
+                <div className="relative flex items-center justify-center flex-none w-6 h-6">
                   {activityItem.type === 'paid' ? (
-                    <CheckCircleIcon
-                      className="w-6 h-6 text-indigo-600"
-                      aria-hidden="true"
-                    />
+                    <div className="w-6 h-6 dark:bg-white rounded-full flex justify-center items-center">
+                      <CheckCircleIcon
+                        className="w-6 h-6 text-indigo-600"
+                        aria-hidden="true"
+                      />
+                    </div>
                   ) : (
                     <div className="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300" />
                   )}
                 </div>
                 <p className="flex-auto py-0.5 text-xs leading-5 text-gray-500">
-                  <span className="font-medium text-gray-900">
+                  <span className="font-medium text-gray-900 dark:text-gray-300">
                     {activityItem.person.name}
                   </span>{' '}
                   {activityItem.msg}
