@@ -1,6 +1,6 @@
 'use client';
 
-import useSidebar from '@/store/ProductSidebar';
+import useSidebar from '@/store/Sidebar';
 import { Dialog, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import {
@@ -47,8 +47,6 @@ const team = [
       'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
   },
 ];
-
-const productForms = ['internalName', 'productName'];
 
 export default function Sidebar() {
   const [open, setClose] = useSidebar((state: any) => [

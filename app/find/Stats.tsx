@@ -68,7 +68,7 @@ export function Stats1() {
 
 export function Stats2() {
   return (
-    <div className="hidden w-full sm:block sm:col-span-12">
+    <div className="hidden w-full sm:block sm:col-span-12 z-20">
       <dl className=" grid grid-cols-1 divide-y divide-gray-200 overflow-hidden rounded-lg bg-white shadow md:grid-cols-4 md:divide-x md:divide-y-0">
         {stats.map(item => (
           <div key={item.name} className="px-4 py-2 xl:px-6">

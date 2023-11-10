@@ -30,20 +30,26 @@ export default function Container({ children }: { children: React.ReactNode }) {
       setLogout();
       if (pathname !== '/login') redirect('/login');
     }
-  }, [login, pathname]);
+  }, []);
 
-  return login ? (
-    <>
-      <Header />
-      <div className="relative pt-12 isolate dark:bg-slate-900">
-        <div className="px-6 py-6 mx-auto max-w-7xl sm:py-10 lg:flex lg:items-center lg:justify-center lg:gap-x-10 lg:px-8 lg:py-10">
-          {children}
+  if (login) {
+    return (
+      <>
+        <Header />
+        <div className="relative pt-12 isolate dark:bg-slate-900">
+          <div className="px-6 py-6 mx-auto max-w-7xl sm:py-10 lg:flex lg:items-center lg:justify-center lg:gap-x-10 lg:px-8 lg:py-10">
+            {children}
+          </div>
         </div>
-      </div>
-    </>
-  ) : pathname === '/login' ? (
-    <>{children}</>
-  ) : (
+      </>
+    );
+  }
+
+  if (pathname === '/login') {
+    return <>{children}</>;
+  }
+
+  return (
     <>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8  min-h-[73vh] flex flex-col justify-center">
         <div className="flex justify-center mx-auto max-w-3xl">

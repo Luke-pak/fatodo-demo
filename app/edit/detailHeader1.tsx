@@ -1,5 +1,5 @@
 'use client';
-import useSidebar from '@/store/ProductSidebar';
+import useSidebar from '@/store/Sidebar';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
 
 export default function DetailHeader1() {

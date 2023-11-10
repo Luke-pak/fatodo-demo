@@ -34,7 +34,7 @@ export default function Detail() {
               <Activity />
             </div>
 
-            <div className="ring-1 ring-gray-300 rounded-lg px-3 col-span-1 md:col-span-3">
+            <div className="ring-1 ring-gray-300 rounded-lg px-3 col-span-1 md:col-span-3 pb-3">
               <Tab.Group>
                 <Tabs />
                 <div className="mt-4">

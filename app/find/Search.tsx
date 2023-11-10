@@ -49,18 +49,18 @@ export function Search2() {
             className="border border-slate-400 rounded-lg text-slate-400 flex justify-between h-9 items-center w-full sm:w-3/4 px-3"
             onClick={() => setOpen(true)}
           >
-            <div className="flex items-center text-black">
+            <div className="flex items-center text-black dark:text-gray-200">
               <MagnifyingGlassIcon className="h-5 w-5" />
               <span className="border-r-2 px-2">검색</span>
             </div>
             <div className="text-xs flex gap-1">
-              <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
+              <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 dark:bg-transparent dark:border-2 dark:text-gray-300">
                 2023-11-07~2023-11-14
               </span>
-              <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
+              <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20 dark:bg-transparent dark:border-2 dark:text-green-400 dark:border-green-400">
                 품명
               </span>
-              <span className="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">
+              <span className="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10 dark:bg-transparent dark:border-2 dark:text-blue-400 dark:border-blue-400">
                 품번
               </span>
             </div>
@@ -68,7 +68,7 @@ export function Search2() {
           </button>
         </div>
 
-        <div className="col-span-12 sm:col-span-4 py-1 min-h-[3rem] px-3 flex justify-end">
+        <div className="col-span-12 sm:col-span-4 py-1 min-h-[3rem] px-3 flex justify-end ">
           <Button size="default">제품등록</Button>
         </div>
       </div>

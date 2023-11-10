@@ -1,6 +1,6 @@
 'use client';
 
-import useSidebar from '@/store/ProductSidebar';
+import useSidebar from '@/store/Sidebar';
 import { Dialog, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { Activity, Comment } from './comment';
