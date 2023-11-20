@@ -281,72 +281,78 @@ const images = [
   'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 ];
 
-export default function OrderItems() {
+export default function OrderItems1() {
   const randomNumber = () => {
     return parseInt(Math.floor(Math.random() * 5) + '');
   };
 
   return (
-    <div className="overflow-x-scroll border border-gray-200 rounded-t-md">
-      <table className="w-full text-sm leading-6 text-left whitespace-nowrap">
-        <thead className="text-gray-900 bg-opacity-75 bg-gray-200 dark:bg-gray-700 dark:text-gray-300 sticky z-10">
+    <div className="overflow-x-scroll ">
+      <table className="items-center bg-transparent w-full">
+        <thead className="sticky z-10">
           <tr>
             <th
               scope="col"
-              className="sticky left-0 py-2 pl-3 pr-6 font-semibold text-gray-900 bg-opacity-75 bg-gray-200 dark:bg-gray-700 dark:text-gray-300"
+              className="sticky left-0 px-6 bg-[#f8fafc] text-[#64748b] align-middle border border-solid border-[#f1f5f9] py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
             >
               품명
             </th>
             <th
               scope="col"
-              className="hidden px-2 py-2 font-semibold sm:table-cell"
+              className="hidden sm:table-cell px-6 bg-[#f8fafc] text-[#64748b] align-middle border border-solid border-[#f1f5f9] py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
             >
               엠보
             </th>
             <th
               scope="col"
-              className="hidden px-2 py-2 font-semibold sm:table-cell"
+              className="hidden sm:table-cell px-6 bg-[#f8fafc] text-[#64748b] align-middle border border-solid border-[#f1f5f9] py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
             >
               UV
             </th>
             <th
               scope="col"
-              className="hidden px-2 py-2 font-semibold sm:table-cell"
+              className="hidden sm:table-cell px-6 bg-[#f8fafc] text-[#64748b] align-middle border border-solid border-[#f1f5f9] py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
             >
               GF
             </th>
             <th
               scope="col"
-              className="hidden px-2 py-2 font-semibold sm:table-cell"
+              className="hidden sm:table-cell px-6 bg-[#f8fafc] text-[#64748b] align-middle border border-solid border-[#f1f5f9] py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
             >
               패턴
             </th>
             <th
               scope="col"
-              className="hidden px-2 py-2 font-semibold sm:table-cell"
+              className="hidden sm:table-cell px-6 bg-[#f8fafc] text-[#64748b] align-middle border border-solid border-[#f1f5f9] py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
             >
               COLOR
             </th>
 
             <th
               scope="col"
-              className="hidden px-2 py-2 font-semibold text-right sm:table-cell"
+              className="hidden sm:table-cell px-6 bg-[#f8fafc] text-[#64748b] align-middle border border-solid border-[#f1f5f9] py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
             >
               단가
             </th>
-            <th scope="col" className="px-2 py-2 font-semibold text-right">
+            <th
+              scope="col"
+              className="hidden sm:table-cell px-6 bg-[#f8fafc] text-[#64748b] align-middle border border-solid border-[#f1f5f9] py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            >
               수량
             </th>
-            <th scope="col" className="px-2 py-2 font-semibold text-right">
+            <th
+              scope="col"
+              className="hidden sm:table-cell px-6 bg-[#f8fafc] text-[#64748b] align-middle border border-solid border-[#f1f5f9] py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            >
               금액
             </th>
           </tr>
         </thead>
         <tbody className="dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
           {invoice.items.map(item => (
-            <tr key={item.orderItemSeqId} className="border-b border-gray-100">
-              <td className="sticky left-0 pl-2 align-top bg-white dark:bg-gray-800 dark:border-gray-700">
-                <div className="flex py-2 pr-3 border-r border-gray-200">
+            <tr key={item.orderItemSeqId} className="">
+              <td className="sticky left-0 bg-white border-t-0 pl-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap text-left">
+                <div className="flex py-2 pr-3 border-r border-[#f1f5f9] items-center">
                   <div className="w-16 p-1">
                     <Image
                       className="rounded-md"
@@ -357,29 +363,35 @@ export default function OrderItems() {
                     />
                   </div>
                   <div>
-                    <div className="font-medium text-gray-900 dark:text-gray-400 truncate ">
-                      {item.productName}
-                    </div>
-                    <div className="text-gray-500 truncate">
-                      {item.internalName}
-                    </div>
+                    <div className="text-[#334155]">{item.productName}</div>
+                    <div className="text-[#334155]">{item.internalName}</div>
                   </div>
                 </div>
               </td>
 
-              <td className="px-2 py-3 align-top">{item.embossing}</td>
-              <td className="px-2 py-3 align-top">{item.uv}</td>
-              <td className="px-2 py-3 align-top">{item.gf}</td>
-              <td className="px-2 py-3 align-top">{item.pattern}</td>
-              <td className="px-2 py-3 align-top">{item.colorName}</td>
+              <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap">
+                {item.embossing}
+              </td>
+              <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap">
+                {item.uv}
+              </td>
+              <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap">
+                {item.gf}
+              </td>
+              <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap">
+                {item.pattern}
+              </td>
+              <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap">
+                {item.colorName}
+              </td>
 
-              <td className="hidden px-2 py-3 text-right align-top tabular-nums sm:table-cell">
+              <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap">
                 ${item.unitPrice.toFixed(2)}
               </td>
-              <td className="hidden px-2 py-3 text-right align-top tabular-nums sm:table-cell">
+              <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap">
                 {item.quantity}
               </td>
-              <td className="px-2 py-3 text-right align-top tabular-nums">
+              <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap">
                 ${(item.quantity * item.unitPrice).toFixed(2)}
               </td>
             </tr>

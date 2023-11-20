@@ -37,8 +37,8 @@ export default function SideHitory() {
                 leaveTo="translate-x-full"
               >
                 <Dialog.Panel className="w-screen h-full max-w-2xl pointer-events-auto">
-                  <form className="flex flex-col h-full overflow-y-scroll bg-white shadow-xl dark:bg-gray-900">
-                    <div className="flex-1">
+                  <form className="flex flex-col h-full overflow-y-scroll sm:overflow-hidden bg-white shadow-xl dark:bg-gray-900">
+                    <div className="flex-1 w-full">
                       {/* Header */}
                       <div className="absolute top-0 w-full p-4 bg-gray-100 sm:px-6 pr-14 dark:bg-gray-700 z-10">
                         <div className="flex items-start justify-between space-x-3">
@@ -65,7 +65,7 @@ export default function SideHitory() {
                       </div>
 
                       {/* Divider container */}
-                      <div className="py-3 mt-16 mb-32 sm:mb-20 pr-12 pl-6">
+                      <div className="py-3 mt-16 mb-32 sm:mb-20 pr-12 sm:pr-6 pl-6">
                         <Comment />
                         <Activity />
                       </div>

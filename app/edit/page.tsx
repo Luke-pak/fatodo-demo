@@ -13,28 +13,36 @@ const ReactQuill = dynamic(() => import('react-quill'), {
   ssr: false,
 });
 import 'react-quill/dist/quill.snow.css';
+import {
+  CustomerSection,
+  ExchangeSection,
+  HeaderSection,
+} from './inputSection';
+import OrderItems1 from './orderItems1';
 
 export default function Detail() {
   return (
     <>
-      <main>
+      <main className="w-full">
         <DetailHeader1 />
 
-        <div className="pt-3 mx-auto max-w-7xl">
-          <div className="grid gap-4 grid-cols-1 mx-auto md:grid-cols-3">
+        <div className="pt-3">
+          <div className="grid gap-4 grid-cols-1 md:grid-cols-3">
             {/* header */}
-            <div className="ring-1 ring-gray-300 rounded-lg col-span-1 md:col-span-2 p-4 lg:px-8">
-              <OrderHeader />
+            <div className="ring-1 ring-gray-300 rounded-lg col-span-1 md:col-span-3 p-2 px-4 dark:ring-0 dark:bg-gray-800">
+              <HeaderSection />
+              <div className="my-2 border-t border-gray-300" />
+              <CustomerSection />
+              <div className="my-2 border-t border-gray-300" />
+              <ExchangeSection />
             </div>
 
-            <div className="hidden md:block ring-1 ring-gray-300 rounded-lg col-span-1 p-3">
-              {/* New comment form */}
+            {/* <div className="hidden md:block ring-1 ring-gray-300 rounded-lg col-span-1 p-3">
               <Comment />
-              {/* Activity feed */}
               <Activity />
-            </div>
+            </div> */}
 
-            <div className="ring-1 ring-gray-300 rounded-lg px-3 col-span-1 md:col-span-3 pb-3">
+            <div className="ring-1 ring-gray-300 rounded-lg px-3 col-span-1 md:col-span-3 pb-3 dark:ring-0 dark:bg-gray-800">
               <Tab.Group>
                 <Tabs />
                 <div className="mt-4">
@@ -43,9 +51,7 @@ export default function Detail() {
                       <OrderItems />
                     </Tab.Panel>
                     <Tab.Panel>
-                      <div className="text-lg text-gray-500 font-semibold pb-5 px-5">
-                        출하
-                      </div>
+                      <OrderItems1 />
                     </Tab.Panel>
                     <Tab.Panel>
                       <div className="pb-5">
