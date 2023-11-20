@@ -54,7 +54,7 @@ export function HeaderSection() {
                 )}
               >
                 {orderHeader.header?.map(item => (
-                  <span className="inline-flex">
+                  <span className="inline-flex" key={item.name}>
                     <p className="text-gray-500 font-medium mr-1">
                       {item.title} :{' '}
                     </p>
@@ -124,7 +124,7 @@ export function CustomerSection() {
                 )}
               >
                 {orderHeader.customer?.map(item => (
-                  <span className="inline-flex">
+                  <span className="inline-flex" key={item.name}>
                     <p className="text-gray-500 font-medium mr-1">
                       {item.title} :{' '}
                     </p>
@@ -194,7 +194,7 @@ export function ExchangeSection() {
                 )}
               >
                 {orderHeader.exchange?.map(item => (
-                  <span className="inline-flex">
+                  <span className="inline-flex" key={item.name}>
                     <p className="text-gray-500 font-medium mr-1">
                       {item.title} :{' '}
                     </p>
