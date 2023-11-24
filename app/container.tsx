@@ -40,6 +40,8 @@ export default function Container({ children }: { children: React.ReactNode }) {
       <>
         {/* <Header /> */}
         <Header1 />
+        <Notification />
+
         <div className="relative pt-12 isolate dark:bg-slate-900">
           <div className="px-6 py-6 mx-auto md:max-w-7xl xl:max-w-[1400px] sm:py-10 lg:flex lg:items-center lg:justify-center lg:gap-x-10 lg:px-8 lg:py-10">
             {children}

@@ -10,6 +10,27 @@ export default function Home() {
           </h1>
         </div>
 
+        <div className="flex gap-4 mt-10">
+          <div className="bg-primary uppercase p-3 rounded-lg font-semibold text-white">
+            primary
+          </div>
+          <div className="bg-success uppercase p-3 rounded-lg font-semibold text-white">
+            success
+          </div>
+          <div className="bg-secondary uppercase p-3 rounded-lg font-semibold text-white">
+            secondary
+          </div>
+          <div className="bg-danger uppercase p-3 rounded-lg font-semibold text-white">
+            danger
+          </div>
+          <div className="bg-warning uppercase p-3 rounded-lg font-semibold text-white">
+            warning
+          </div>
+          <div className="bg-info uppercase p-3 rounded-lg font-semibold text-white">
+            info
+          </div>
+        </div>
+
         <div className="flex justify-center mx-auto max-w-3xl font-bold text-5xl sm:text-7xl lg:text-9xl mt-10">
           <p className="text-[#0c1e54]">F</p>
           <p>AC</p>

@@ -19,6 +19,7 @@ import {
   HeaderSection,
 } from './inputSection';
 import OrderItems1 from './orderItems1';
+import OrderHeader1 from './orderHeader1';
 
 export default function Detail() {
   return (
@@ -30,11 +31,13 @@ export default function Detail() {
           <div className="grid gap-4 grid-cols-1 md:grid-cols-3">
             {/* header */}
             <div className="ring-1 ring-gray-300 rounded-lg col-span-1 md:col-span-3 p-2 px-4 dark:ring-0 dark:bg-gray-800">
-              <HeaderSection />
+              {/* <HeaderSection />
               <div className="my-2 border-t border-gray-300" />
               <CustomerSection />
               <div className="my-2 border-t border-gray-300" />
-              <ExchangeSection />
+              <ExchangeSection /> */}
+
+              <OrderHeader1 />
             </div>
 
             {/* <div className="hidden md:block ring-1 ring-gray-300 rounded-lg col-span-1 p-3">

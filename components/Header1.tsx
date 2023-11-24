@@ -10,6 +10,7 @@ import ProfileMenu from './ProfileMenu';
 import Image from 'next/image';
 import useOpenMenu from '@/store/OpenMenu';
 import { usePathname } from 'next/navigation';
+import useNotification from '@/store/Notification';
 
 const navigation = [
   { name: '검색', href: '/find', current: false },
@@ -21,6 +22,11 @@ const navigation = [
 export default function Header1() {
   const setOpen = useOpenMenu((state: any) => state.setOpenMenu);
   const pathname = usePathname();
+
+  const [notification, setNotiOpen] = useNotification((state: any) => [
+    state.notification,
+    state.setOpen,
+  ]);
 
   return (
     <>
@@ -78,7 +84,11 @@ export default function Header1() {
               {/* =====👈👈👈👈👈 Notification Buttton 👉👉👉👉👉 ===== */}
               <button
                 type="button"
-                className="relative p-1 text-gray-400 bg-gray-800 rounded-full hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                className={clsx(
+                  'relative p-1 text-gray-400 bg-gray-800 rounded-full hover:text-white',
+                  notification && 'text-amber-400'
+                )}
+                onClick={setNotiOpen}
               >
                 <span className="absolute -inset-1.5" />
                 <span className="sr-only">View notifications</span>
